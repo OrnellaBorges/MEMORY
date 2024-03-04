@@ -7,6 +7,10 @@ export function Header() {
       <Link to="/">
         <h1 className="logo">Memory</h1>
       </Link>
+
+      <nav className="nav">
+        <Link to="/test">TestPage</Link>
+      </nav>
     </header>
   );
 }

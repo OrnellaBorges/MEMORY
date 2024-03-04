@@ -7,6 +7,7 @@ import { DetailRequestPage } from "./pages/DetailRequest/DetailRequestPage";
 import { useState } from "react";
 import "./App.css";
 import type { LeaveRequest } from "./types/LeaveRequestType";
+import TestPage from "./pages/TestPage/TestPage";
 
 export default function App() {
   const [requestId, setRequestId] = useState<number | null>(null);
@@ -28,6 +29,7 @@ export default function App() {
               <ManagerPage requests={requests} updateId={setRequestId} />
             }
           />
+          <Route path="/test" element={<TestPage />} />
           <Route
             path="/detail-request"
             element={

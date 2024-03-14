@@ -1,9 +1,20 @@
 import { Header } from "./components/Header/Header";
+import { useState } from "react";
 
-export function Layout({ children }: { children: React.ReactNode }) {
+type LayoutProps = {
+  children: React.ReactNode;
+  handleModalOpen: () => void;
+};
+
+export function Layout({ children, handleModalOpen }: LayoutProps) {
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
   return (
     <>
-      <Header />
+      <Header handleModalOpen={handleModalOpen} />
       {children}
     </>
   );

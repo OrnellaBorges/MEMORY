@@ -1,13 +1,15 @@
 import { useState } from "react";
 import UserList from "../../components/List/UsersList";
-//import { Input } from "../../components/Input/Input";
 import InputSearch from "../../components/SearchFilter/InputSearch";
 
+import "./style.css";
+
 export default function TestPage() {
-  return (
-    <>
-      <InputSearch />
-      <UserList />
-    </>
-  );
+    const [letter, setLetter] = useState<string>("");
+    return (
+        <section className="sectionTest">
+            <InputSearch onChange={setLetter} />
+            <UserList letter={letter} />
+        </section>
+    );
 }

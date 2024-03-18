@@ -10,7 +10,7 @@ type ModalTestProps = {
 export function ModalTest({ handleClose, show, children }: ModalTestProps) {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
   return (
-    <div className={showHideClassName}>
+    <div data-mika="mika" className={showHideClassName}>
       <section className="modal-main">
         {children}
         <button onClick={handleClose}>Fermer</button>
